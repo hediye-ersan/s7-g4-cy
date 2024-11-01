@@ -45,6 +45,7 @@ export default function Login() {
 
   const handleChange = (event) => {
     let { name, value, type } = event.target;
+    value = type === 'checkbox' ? event.target.checked : value;
     setForm({ ...form, [name]: value });
   };
 
