@@ -68,7 +68,7 @@ export default function Login() {
       } else {
         setErrors({ ...errors, [name]: true });
       }
-
+    }
   };
 
 
@@ -115,7 +115,20 @@ export default function Login() {
           value={form.password}
         />
       </FormGroup>
-      {/* reactstrap checkbox ekleyelim*/}
+      {errors.password && <FormFeedback>{errorMessages.password}</FormFeedback>}
+      <FormGroup check>
+        <Input
+          id="terms"
+          name="terms"
+          checked={form.terms}
+          type="checkbox"
+          onChange={handleChange}
+          invalid={errors.terms}
+        />{' '}
+        <Label htmlFor="terms" check>
+          I agree to terms of service and privacy policy
+        </Label>
+      </FormGroup>
 
       <FormGroup className="text-center p-4">
         <Button color="primary">Sign In</Button>
