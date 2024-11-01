@@ -30,6 +30,19 @@ export default function Login() {
       );
   };
 
+  useEffect(() => {
+    // Butonun durumunu kontrol et
+    if (
+      validateEmail(form.email) &&
+      form.password.trim().length >= 4 &&
+      form.terms
+    ) {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }, [form]);
+
   const handleChange = (event) => {
     let { name, value, type } = event.target;
     setForm({ ...form, [name]: value });
