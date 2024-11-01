@@ -47,7 +47,31 @@ export default function Login() {
     let { name, value, type } = event.target;
     value = type === 'checkbox' ? event.target.checked : value;
     setForm({ ...form, [name]: value });
+
+    if (name === 'email') {
+      if (validateEmail(value)) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    }
+    if (name === 'password') {
+      if (value.trim().length >= 4) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+    }
+    if (name === 'terms') {
+      if (value) {
+        setErrors({ ...errors, [name]: false });
+      } else {
+        setErrors({ ...errors, [name]: true });
+      }
+
   };
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
