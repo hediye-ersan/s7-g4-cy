@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
+
+
 
 import axios from 'axios';
 
@@ -8,6 +10,10 @@ const initialForm = {
   email: '',
   password: '',
   terms: false,
+};
+const errorMessages = {
+  email: 'Please enter a valid email address',
+  password: 'Password must be at least 4 characters long',
 };
 
 export default function Login() {
