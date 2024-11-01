@@ -102,6 +102,7 @@ export default function Login() {
           type="email"
           onChange={handleChange}
           value={form.email}
+          invalid={errors.email}
         />
       </FormGroup>
       <FormGroup>
@@ -113,6 +114,7 @@ export default function Login() {
           type="password"
           onChange={handleChange}
           value={form.password}
+          invalid={errors.password}
         />
       </FormGroup>
       {errors.password && <FormFeedback>{errorMessages.password}</FormFeedback>}
