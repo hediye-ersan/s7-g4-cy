@@ -7,7 +7,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest",
+    "test": "npx cypress open",
     "backend": "node src/mocks/api.js",
     "wit": "concurrently 'npm run dev' 'npm run test'"
   },
