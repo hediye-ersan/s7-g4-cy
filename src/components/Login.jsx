@@ -12,6 +12,13 @@ const initialForm = {
 
 export default function Login() {
   const [form, setForm] = useState(initialForm);
+  const [isValid, setIsValid] = useState(false);
+  const [errors, setErrors] = useState({
+    email: false,
+    password: false,
+    terms: false,
+  });
+
 
   const history = useHistory();
 
