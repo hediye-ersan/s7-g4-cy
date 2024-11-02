@@ -111,6 +111,7 @@ export default function Login() {
           invalid={errors.email}
           data-cy = "email-input"
         />
+        {errors.email && <FormFeedback data-cy= "error-mesage">{errorMessages.email}</FormFeedback>}
       </FormGroup>
       <FormGroup>
         <Label for="examplePassword">Password</Label>
@@ -124,8 +125,9 @@ export default function Login() {
           invalid={errors.password}
           data-cy = "password-input"
         />
+         {errors.password && <FormFeedback data-cy= "error-mesage">{errorMessages.password}</FormFeedback>}
       </FormGroup>
-      {errors.password && <FormFeedback>{errorMessages.password}</FormFeedback>}
+     
       <FormGroup check>
         <Input
           id="terms"
@@ -142,7 +144,7 @@ export default function Login() {
       </FormGroup>
 
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!isValid} data-cy = "button-input">Sign In</Button>
+        <Button color="primary" disabled={!isValid} data-cy="submit">Sign In</Button>
       </FormGroup>
     </Form>
   );
