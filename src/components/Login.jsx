@@ -109,9 +109,9 @@ export default function Login() {
           onChange={handleChange}
           value={form.email}
           invalid={errors.email}
-          data-cy = "email-input"
+          data-cy="email-input"
         />
-        {errors.email && <FormFeedback data-cy= "error-mesage">{errorMessages.email}</FormFeedback>}
+        {errors.email && <FormFeedback data-cy="error-mesage">{errorMessages.email}</FormFeedback>}
       </FormGroup>
       <FormGroup>
         <Label for="examplePassword">Password</Label>
@@ -123,11 +123,11 @@ export default function Login() {
           onChange={handleChange}
           value={form.password}
           invalid={errors.password}
-          data-cy = "password-input"
+          data-cy="password-input"
         />
-         {errors.password && <FormFeedback data-cy= "error-mesage">{errorMessages.password}</FormFeedback>}
+        {errors.password && <FormFeedback data-cy="error-mesage">{errorMessages.password}</FormFeedback>}
       </FormGroup>
-     
+
       <FormGroup check>
         <Input
           id="terms"
@@ -136,7 +136,7 @@ export default function Login() {
           type="checkbox"
           onChange={handleChange}
           invalid={errors.terms}
-          data-cy = "terms-input"
+          data-cy="terms-input"
         />{' '}
         <Label htmlFor="terms" check>
           I agree to terms of service and privacy policy
